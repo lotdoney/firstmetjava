@@ -23,6 +23,7 @@ public class FirstStu{
        System.out.print("年龄：");
        int age  = input.nextInt();
 
+       System.out.println("you know this is a test and i hope it can make sense!");
        System.out.println("你的信息为："+ name+ '\t'+ type+'\t'+age);
     }
 }
