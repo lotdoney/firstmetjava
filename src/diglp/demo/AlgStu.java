@@ -1,12 +1,15 @@
+package diglp.demo;
+
 import java.util.Random;
 import java.util.Scanner;
 
-public class Sametest{
+//相加算法——大数相加，思考一个问题，同样是大数相加的算法，add和plus哪个更快呢
+public  class AlgStu{
 
     public static void main(String[] args){
         System.out.println("这是一个大数相加的计算器，因此你能输入比较长的正整数！");
         long start = System.currentTimeMillis();
-        int n= 100;
+        int n = 100;
         while (--n>0){
             Scanner input = new Scanner(System.in);
             System.out.print("第一个数字：");
@@ -39,11 +42,13 @@ public class Sametest{
             }
 
             int[] s = new int[leng+1];
-            plus(n1,n2,s);
+            add(n1,n2,s);
             for (int i=0;i<s.length;i++){
                 System.out.print(s[i]);
             }
             System.out.println();
+
+
 
         }
 
@@ -53,33 +58,30 @@ public class Sametest{
 
     }
 
-    public static void plus(int[] n1, int[] n2,int[] sum){
-        int position = n1.length-1;
+    public static void add(int[] n1 , int[] n2, int[] sum){
+        int position = n1.length -1;
         int carry = 0;
-        while (position>=0){
-            int total = n1[position] + n2[position] + carry;
-            if (total > 9){
-                sum[position+1] = total -10;
-                carry = 1;
-            }
-            else {
-                sum[position+1] = total;
-                carry = 0;
-            }
-            position--;
+        while (position >= 0){
+            int total  = n1[position] + n2[position] + carry;
+            sum[position+1] = total % 10;
+            if (total > 9) carry =1;
+            else  carry = 0;
+            position -- ;
         }
         sum[0] = carry;
+
     }
+
 
     public static String getRandomString(int length){
         String str="123456789";
         Random random=new Random();
-        StringBuffer s=new StringBuffer();
+        StringBuffer sb=new StringBuffer();
         for(int i=0;i<length;i++){
             int number=random.nextInt(9);
-            s.append(str.charAt(number));
+            sb.append(str.charAt(number));
         }
-        return s.toString();
+        return sb.toString();
     }
 
 
@@ -93,3 +95,7 @@ public class Sametest{
     }
 
 }
+
+
+
+

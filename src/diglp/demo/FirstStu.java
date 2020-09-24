@@ -1,8 +1,7 @@
 package diglp.demo;
 
-import com.sun.tools.javac.util.Log;
-import com.sun.xml.internal.xsom.impl.scd.Step;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+
+
 
 import java.util.Scanner;
 
